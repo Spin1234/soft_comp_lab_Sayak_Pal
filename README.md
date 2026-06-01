@@ -115,23 +115,4 @@ print("-" * 38 + "\n")
 ```
 
 Output:
---- Textbook TSP implementation ---
-
-**Chromosome example from book:** 101011001110001
-**Decoded Tour:** a -> d -> b -> c -> e -> a
-**Calculated Fitness (Reward):** 220 (Expected: 222)
-
-| Chromosome       | Tour      | Fitness |
-|------------------|-----------|---------|
-| 100011010111010  | e-d-c-a-b | 143     |
-| 001001000110101  | b-c-a-d-e | 141     |
-| 110010011000110  | a-c-d-b-e | 166     |
-| 000111011110100  | a-b-d-c-e | 222     |
-| 010110110101001  | c-a-b-d-e | 159     |
-| 110010000011110  | a-c-b-d-e | 156     |
-| 100001001000101  | e-b-c-a-d | 141     |
-| 010101000010110  | c-a-b-d-e | 159     |
-| 011000001011010  | d-a-b-e-c | 207     |
-| 010101011111111  | c-a-d-b-e | 167     |
-
----
+<img width="532" height="626" alt="image" src="https://github.com/user-attachments/assets/da89ee27-77d5-4b9b-a65f-ecf9da656ee4" />
