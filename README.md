@@ -1,3 +1,143 @@
+## ASSIGNMENT 5
+### Q1)Write a python function to realizing the logical AND function through Hebb learning.
+
+Code:
+```python
+# Training data (bipolar)
+inputs = [
+    (1, 1),
+    (1, -1),
+    (-1, 1),
+    (-1, -1)
+]
+
+targets = [1, -1, -1, -1]
+
+# Initial weights and bias
+w1 = 0
+w2 = 0
+b = 0
+
+print("Training Start:\n")
+
+# Training using Hebb rule
+for i in range(len(inputs)):
+    x1, x2 = inputs[i]
+    y = targets[i]
+
+    # Using your formulas
+    delta_w1 = x1 * y      # Δw1 = x1 * y
+    delta_w2 = x2 * y      # Δw2 = x2 * y
+    delta_b = y            # Δb = y
+
+    w1 = w1 + delta_w1     # w1(new) = w1(old) + Δw1
+    w2 = w2 + delta_w2     # w2(new) = w2(old) + Δw2
+    b = b + delta_b        # b(new) = b(old) + Δb
+
+    print(f"Step {i+1}: w1={w1}, w2={w2}, b={b}")
+
+print("\nFinal Weights:")
+print("w1 =", w1)
+print("w2 =", w2)
+print("b  =", b)
+
+# User input
+print("\nEnter input values (only 1 or -1):")
+x1 = int(input("Enter x1: "))
+x2 = int(input("Enter x2: "))
+
+# Net calculation
+net = x1 * w1 + x2 * w2 + b
+
+# Activation (sign function)
+if net >= 0:
+    output = 1
+else:
+    output = -1
+
+print("\nOutput (Target Value):", output)
+```
+
+### Output:
+<img width="352" height="372" alt="image" src="https://github.com/user-attachments/assets/f5d6d7c3-3952-444a-9735-c6c53cb70af8" />
+
+
+### Q2) Write a python function to realizing the logical AND function by a perceptron.
+
+Code:
+```python
+inputs = [
+    (1, 1),
+    (1, -1),
+    (-1, 1),
+    (-1, -1)
+]
+
+targets = [1, -1, -1, -1]
+
+# Initial weights
+w1 = 0
+w2 = 0
+b = 0
+
+alpha = 1
+
+print("EPOCH 1:\n")
+
+# Training
+for i in range(4):
+    x1, x2 = inputs[i]
+    t = targets[i]
+
+    # Net input
+    y_in = b + x1*w1 + x2*w2
+
+    # Activation
+    if y_in > 0:
+        y = 1
+    elif y_in == 0:
+        y = 0
+    else:
+        y = -1
+
+    # Update only if incorrect
+    if y != t:
+        delta_w1 = alpha * t * x1
+        delta_w2 = alpha * t * x2
+        delta_b = alpha * t
+
+        w1 = w1 + delta_w1
+        w2 = w2 + delta_w2
+        b = b + delta_b
+
+    print(f"Row {i+1} -> w1={w1}, w2={w2}, b={b}")
+
+print("\nFinal Weights:")
+print("w1 =", w1, "w2 =", w2, "b =", b)
+
+# ------------------ USER TESTING ------------------
+
+print("\nEnter input (only 1 or -1):")
+x1 = int(input("Enter x1: "))
+x2 = int(input("Enter x2: "))
+
+# Net input for testing
+y_in = b + x1*w1 + x2*w2
+
+# Activation
+if y_in > 0:
+    output = 1
+elif y_in == 0:
+    output = 0
+else:
+    output = -1
+
+print("\nFinal Output:", output)
+```
+### Output:
+<img width="290" height="324" alt="image" src="https://github.com/user-attachments/assets/70bf41ee-bcc6-438f-b7ed-3ac6c572e63c" />
+
+
 ## Assignments-6
 Elementary Search Techniques (Travelling Salesperson Problem)
 
