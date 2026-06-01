@@ -114,5 +114,6 @@ print(tabulate(generate_initial_population(), headers=headers, tablefmt="grid"))
 print("-" * 38 + "\n")
 ```
 
-Output:
+### Output:
+
 <img width="532" height="626" alt="image" src="https://github.com/user-attachments/assets/da89ee27-77d5-4b9b-a65f-ecf9da656ee4" />
